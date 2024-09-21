@@ -1,20 +1,20 @@
 
 def descifrar(msg):
-
-	frecuencias = [[],[]]
+	str(msg)
+	frecuencias = {}	
 	
-	for i in frecuencias:
-		frecuencias[i][0] = 
-	
-	
-	
+	for letra in msg:
+		if letra.isalpha():
+			if letra in frecuencias:
+				frecuencias[letra] += 1
+			else:
+				frecuencias[letra] = 1
+
+	print(frecuencias)
 
 
-
-def main():
-
-	mensaje = input(f"Introduce el mensaje a cescifrar: ")
-	descifrar(mensaje)
+mensaje = input(f"Introduce el mensaje a cescifrar: ")
+descifrar(mensaje)
 	
 
 
