@@ -1,3 +1,5 @@
+def substitute_text(text, mapping):
+    return ''.join([mapping.get(char, char) for char in text])
 
 def descifrar(msg):
 	str(msg)
@@ -26,9 +28,9 @@ def descifrar(msg):
 	return ''.join(desentriptado)
 
 
-mensaje = input(f"Introduce el mensaje a cescifrar: ")
 mensaje = descifrar(
-	"""RIJ AZKKZHC PIKCE XT ACKCUXJHX SZX, E NZ PEJXKE, PXGIK XFDKXNEQE RIPI RIPQEHCK ET OENRCNPI AXNAX ZJ RKCHXKCI AX CJAXDXJAXJRCE
+	"""
+	RIJ AZKKZHC PIKCE XT ACKCUXJHX SZX, E NZ PEJXKE, PXGIK XFDKXNEQE RIPI RIPQEHCK ET OENRCNPI AXNAX ZJ RKCHXKCI AX CJAXDXJAXJRCE
 	AX RTENX, E ACOXKXJRCE AXT RITEQIKERCIJCNPI OKXJHXDIDZTCNHE AX TE ACKXRRCIJ EJEKSZCNHE.
 	AZKKZHC OZX ZJ OERHIK AX DKCPXK IKAXJ XJ XT DEDXT AX TE RTENX IQKXKE XJ REHETZJVE XJ GZTCI AX 1936. DXKI AZKKZHC, RIPI IRZKKX RIJ
 	TEN DXKNIJETCAEAXN XJ TE MCNHIKCE, JI REVI AXT RCXTI. DXKNIJCOCREQE TE HKEACRCIJ KXvITZRCIJEKCE AX TE RTENX IQKXKE. NZ XJIKPX
@@ -41,16 +43,22 @@ mensaje = descifrar(
 print(mensaje)
 
 finished = False
+substitution_map = {}
 
 while not finished:
-	print("¿Quieres cambiar algo? (Y/N)")
+	print("¿Quieres cambiar algo mas? (Y/N)")
 	if input() == "Y":
 		prim = input(f"¿Que letra quieres cambiar?")
 		sec = input(f"¿Por que letra la quieres cambiar?")
-		mensaje = mensaje.replace(prim.lower(), sec.lower())
-		print(mensaje)
+		substitution_map[prim.lower()] = sec.lower()
+		print("Reemplazo actual:")
+		print(substitute_text)
+		print(substitute_text(mensaje, substitution_map))
 	else:
-		finished = True
+		print(substitute_text(mensaje, substitution_map))
+		print("¿Quieres cambiar algo mas? (Y/N)")
+		if input() == "N":
+			finished = True
 	
 
 	
