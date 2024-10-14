@@ -52,12 +52,12 @@ while not finished:
 		sec = input(f"¿Por que letra la quieres cambiar?")
 		substitution_map[prim.lower()] = sec.lower()
 		print("Reemplazo actual:")
-		print(substitute_text)
+		print(substitution_map)
 		print(substitute_text(mensaje, substitution_map))
 	else:
 		print(substitute_text(mensaje, substitution_map))
-		print("¿Quieres cambiar algo mas? (Y/N)")
-		if input() == "N":
+		print("¿Has terminado? (Y/N)")
+		if input() == "Y":
 			finished = True
 	
 
